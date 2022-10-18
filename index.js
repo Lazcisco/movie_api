@@ -3,6 +3,8 @@ const express = require("express"),
 
 const app = express();
 
+app.enable("strict routing");
+
 app.use(morgan("common"));
 
 app.use(express.static("public"));
@@ -69,4 +71,5 @@ app.use((err, req, res, next) => {
 
 app.listen(8080, () => {
   console.log("Your app is listening on port 8080.");
+  console.log("http://localhost:8080");
 });
